@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 21:56:07 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/02/11 02:02:34 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/02/12 18:20:37 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void ft_rrb(t_stack **stack)
     write(1, "rrb\n", 4);
 }
 
-void ft_rb(t_stack **stack)
+void ft_rb(t_stack **stack, int i)
 {
     t_stack *tmp;
     t_stack *last;
@@ -89,9 +89,10 @@ void ft_rb(t_stack **stack)
     last->next = tmp;
     tmp->next = NULL;
     (*stack) = head;
-    write(1, "rb\n", 4);
+    if(i)
+        write(1, "rb\n", 4);
 }
-void ft_ra(t_stack **stack)
+void ft_ra(t_stack **stack, int i)
 {
     t_stack *tmp;
     t_stack *last;
@@ -102,7 +103,8 @@ void ft_ra(t_stack **stack)
     last->next = tmp;
     tmp->next = NULL;
     (*stack) = head;
-    write(1, "ra\n", 4);
+    if(i)
+        write(1, "ra\n", 4);
 }
 
 void ft_pb(t_stack **stack_a, t_stack **stack_b)
@@ -126,4 +128,11 @@ void ft_pa(t_stack **stack_a, t_stack **stack_b)
     *stack_b = head;
     (*stack_a)->next = tmp;
     write(1, "pa\n", 4);
+}
+
+void ft_rr(t_stack **stack_a,t_stack **stack_b)
+{
+    ft_ra(stack_a, 0);
+    ft_rb(stack_b, 0);
+    write(1, "rr\n", 4);
 }

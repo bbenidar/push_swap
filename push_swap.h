@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 23:59:43 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/02/11 02:02:20 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/02/12 18:21:06 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,14 @@ void				short_sort(t_stack **stack, int len);
 void				ft_swap(int *a, int *b);
 void				ft_sa(t_stack *stack);
 void				ft_rra(t_stack **stack);
-void				ft_ra(t_stack **stack);
+void				ft_ra(t_stack **stack, int i);
 void				ft_max(t_stack *stack);
 int					ft_position(t_stack *stack, int index);
 void				ft_sort_five(t_stack *stack_a, t_stack *stack_b);
-void	ft_pb(t_stack **stack_a, t_stack **stack_b);
-void ft_pa(t_stack **stack_a, t_stack **stack_b);
-
+void				ft_pb(t_stack **stack_a, t_stack **stack_b);
+void				ft_pa(t_stack **stack_a, t_stack **stack_b);
+void				ft_sort_onehunder(t_stack **stack_a, t_stack **stack_b);
+void				ft_ind(t_stack **stack_a, t_stack **stack_b, int index);
+void				ft_rb(t_stack **stack, int i);
+void				ft_rr(t_stack **stack_a, t_stack **stack_b);
 #endif

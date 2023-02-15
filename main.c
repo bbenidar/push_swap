@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:51:30 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/02/11 02:07:30 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/02/12 19:12:05 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ char **ft_join_av(char **av , int ac)
     str1 = ft_split(tr1, ' ');
     return (str1);
 }
+
+
+
+
 
 t_stack *copy_av(int ac, char **av)
 {
@@ -104,17 +108,36 @@ int main(int ac, char **av)
         del_stack(&stack_a);
         return (0);
     }
-    if(len == 5)
+    if(len <= 5)
     {
         ft_sort_five(stack_a, stack_b);
-        // while(stack_a)
-        // {
-            printf("end = %d  ",stack_a->num);
-        //     printf("num = %d\n",stack_a->num);
-        //     stack_a = stack_a->next;
-        // }
         return (0);
     }
+    t_stack *tmp;
+    tmp = stack_a;
+    printf(" _________________________\n");
+    printf("|     num   |     end     |\n");
+    printf("|_________________________|\n");
+    while(tmp)
+    {
+        printf("|num : %d | end : %d|\n", tmp->num, tmp->end);
+        tmp = tmp->next;
+    }
+    ft_sort_onehunder(&stack_a, &stack_b);
+    //   printf(" _________________________\n");
+    // printf("|     num   |     end     |\n");
+    // printf("|_________________________|\n");
+    // while(stack_a)
+    // {
+    //     printf("|num : %d | end : %d|\n", stack_a->num, stack_a->end);
+    //     stack_a = stack_a->next;
+    // }
+    // printf("|__________________________________________________-----____|\n");
+    //  while(stack_b)
+    // {
+    //     printf("|num : %d | end : %d|\n", stack_b->num, stack_b->end);
+    //     stack_b = stack_b->next;
+    // }
       
     
 }

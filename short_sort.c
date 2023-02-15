@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 23:36:16 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/02/11 00:54:25 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/02/12 18:20:04 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void short_tlata(t_stack **stack)
                 ft_rra(stack);
             }
             else if((*stack)->next->num < (*stack)->next->next->num )
-                ft_ra(stack);
+                ft_ra(stack, 1);
         }
             
     }
@@ -39,7 +39,7 @@ void short_tlata(t_stack **stack)
             else
             {
                 ft_sa(*stack);
-                ft_ra(stack);
+                ft_ra(stack, 1);
             }
         }
            
