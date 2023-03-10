@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 23:59:43 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/02/12 18:21:06 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:50:24 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,13 @@ int					ft_position(t_stack *stack, int index);
 void				ft_sort_five(t_stack *stack_a, t_stack *stack_b);
 void				ft_pb(t_stack **stack_a, t_stack **stack_b);
 void				ft_pa(t_stack **stack_a, t_stack **stack_b);
-void				ft_sort_onehunder(t_stack **stack_a, t_stack **stack_b);
+void				ft_sort_onehunder(t_stack **stack_a, t_stack **stack_b,
+						int chink);
 void				ft_ind(t_stack **stack_a, t_stack **stack_b, int index);
 void				ft_rb(t_stack **stack, int i);
 void				ft_rr(t_stack **stack_a, t_stack **stack_b);
+void				ft_rrb(t_stack **stack);
+void				ft_sort_fivehunder(t_stack **stack_a, t_stack **stack_b,
+						int chink);
+t_stack				*copy_av(int ac, char **av);
 #endif

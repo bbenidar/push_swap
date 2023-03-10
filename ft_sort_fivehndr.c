@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_onehunder.c                                :+:      :+:    :+:   */
+/*   ft_sort_fivehndr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 00:02:42 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/10 18:51:00 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/03/09 00:44:33 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/03/10 18:50:02 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_onehunder(t_stack **stack_a, t_stack **stack_b, int chink)
+void	ft_sort_fivehunder(t_stack **stack_a, t_stack **stack_b, int chink)
 {
-	int i;
+	int	i;
+	int	len;
+	int	akhna;
+	int	start;
+	int	end;
 
 	i = 0;
-	int start;
-	int end;
 	start = 0;
 	end = chink - 1;
+	akhna = 0;
 	while (*stack_a)
 	{
 		while (i < chink && (*stack_a))
@@ -44,8 +47,6 @@ void	ft_sort_onehunder(t_stack **stack_a, t_stack **stack_b, int chink)
 		start += chink;
 		end += chink;
 	}
-	int akhna = 0;
-	int len;
 	while (*stack_b)
 	{
 		len = s_len(*stack_b);
