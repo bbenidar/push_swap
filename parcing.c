@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:46:44 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/10 22:29:35 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:39:56 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,30 @@ t_stack	*ft_new_node(void)
 	return (begin);
 }
 
+int	copy_av2(t_stack *begin, char **str, int i)
+{
+	if (check_av(str[i]))
+	{
+		ft_freetab(str);
+		del_stack(&begin);
+		return (0);
+	}
+	return (1);
+}
+
+void	copy_av3(t_stack **tmp, int i, char **str)
+{
+	int		jen;
+
+	jen = ft_lentab(str);
+	if (i < jen - 1)
+	{
+		(*tmp)->next = ft_new_node();
+		(*tmp) = (*tmp)->next;
+		(*tmp)->end = -1;
+	}
+}
+
 t_stack	*copy_av(int ac, char **av)
 {
 	t_stack	*begin;
@@ -46,27 +70,17 @@ t_stack	*copy_av(int ac, char **av)
 	int		i;
 	int		len;
 
-	i = 1;
 	begin = ft_new_node();
 	str = ft_join_av(av, ac);
 	len = ft_lentab(str);
 	tmp = begin;
-	i = 1;
+	i = 0;
 	while (i < len)
 	{
-		if (check_av(str[i]))
-		{
-			ft_freetab(str);
-			del_stack(&begin);
+		if (!copy_av2(begin, str, i))
 			return (0);
-		}
 		tmp->num = ft_atoi(str[i]);
-		if (i < ac - 1)
-		{
-			tmp->next = ft_new_node();
-			tmp = tmp->next;
-			tmp->end = -1;
-		}
+		copy_av3(&tmp, i, str);
 		i++;
 	}
 	ft_check_deplicat(&begin);

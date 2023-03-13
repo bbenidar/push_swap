@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 01:10:19 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/10 18:54:02 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/12 18:52:17 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ void	ft_ind(t_stack **stack_a, t_stack **stack_b, int index)
 {
 	while (ft_position(*stack_a, index) > 0 && ft_position(*stack_a,
 			index) >= s_len(*stack_a) / 2)
-		ft_rra(stack_a);
+		ft_rra(stack_a, 1);
 	while (ft_position(*stack_a, index) > 0 && ft_position(*stack_a,
 			index) <= s_len(*stack_a) / 2)
 		ft_ra(stack_a, 1);
 	if (!ft_position(*stack_a, index))
-		ft_pb(stack_a, stack_b);
+		ft_pb(stack_a, stack_b, 1);
 }
 
 void	ft_sort_five(t_stack *stack_a, t_stack *stack_b)
@@ -71,7 +71,6 @@ void	ft_sort_five(t_stack *stack_a, t_stack *stack_b)
 		ft_ind(&stack_a, &stack_b, 1);
 	if (s_len(stack_a) <= 3 && stack_a)
 		short_sort(&stack_a, s_len(stack_a));
-
-	ft_pa(&stack_a, &stack_b);
-	ft_pa(&stack_a, &stack_b);
+	ft_pa(&stack_a, &stack_b, 1);
+	ft_pa(&stack_a, &stack_b, 1);
 }

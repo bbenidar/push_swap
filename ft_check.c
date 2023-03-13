@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:38:03 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/10 22:26:29 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/13 02:17:35 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,11 @@ void	ft_check_deplicat(t_stack **stack)
 	int	*array;
 	int	len;
 	int	i;
-	int	c = 0;
-    
 	int	j;
 
 	i = 0;
 	len = s_len(*stack);
 	array = copy_stack_to_array(*stack, len);
-    while(array[c])
-        printf("hadik : %d\n", array[c++]);
 	while (i <= len)
 	{
 		j = i;
@@ -35,7 +31,7 @@ void	ft_check_deplicat(t_stack **stack)
 			{
 				del_stack(stack);
 				free(array);
-				write(1, "ERORR\n", 6);
+				write(1, "Error\n", 6);
 				exit(1);
 			}
 		}
@@ -90,7 +86,8 @@ int	check_av(char *str)
 			return (1);
 		i++;
 	}
-	if (len == 10 && check_overflow(str))
+	if ((len >= 10 && check_overflow(str)) || (len > 10
+			&& ft_atoi(str) != ft_atol(str)))
 		return (1);
 	return (0);
 }
@@ -108,23 +105,3 @@ int	check_space(char *str)
 		return (1);
 	return (0);
 }
-// int copy_av2(t_stack *begin, char **str, int i)
-// {
-// 		if (check_av(str[i]))
-// 		{
-// 			ft_freetab(str);
-// 			del_stack(&begin);
-// 			return (0);
-// 		}
-// 		return (1);
-// }
-// void copy_av3(t_stack **tmp, char **str, int i, int ac)
-// {
-// 		(*tmp)->num = ft_atoi(str[i]);
-// 		if (i < ac - 1)
-// 		{
-// 			(*tmp)->next = ft_new_node();
-// 			*tmp = (*tmp)->next;
-// 			(*tmp)->end = -1;
-// 		}
-// }
