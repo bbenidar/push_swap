@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 23:59:43 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/13 02:16:07 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:52:31 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void				another_one(t_stack **stack_a, t_stack **stack_b, int end,
 						int start);
 int					check_sorting(t_stack **stack_a);
 long long			ft_atol(const char *str);
+
 void				ft_rrr(t_stack **stack_a, t_stack **stack_b, int i);
 #endif
