@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 20:51:30 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/13 00:48:49 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/21 17:00:47 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 	int		len;
 
+	if (ac <= 2)
+		return (0);
 	stack_a = copy_av(ac, av);
 	if (!stack_a)
 	{

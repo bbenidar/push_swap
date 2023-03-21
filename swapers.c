@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 21:56:07 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/13 00:49:56 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/15 20:15:03 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_pb(t_stack **stack_a, t_stack **stack_b, int i)
 	t_stack	*tmp;
 	t_stack	*head;
 
-	if (!stack_a)
+	if (!(*stack_a))
 		return ;
 	tmp = *stack_b;
 	head = (*stack_a)->next;

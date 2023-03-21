@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:56:35 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/13 23:52:16 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:50:40 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int	check_sorting(t_stack **stack_a)
 	int		i;
 	t_stack	*tmp;
 
+	if (!(*stack_a))
+		return (0);
 	i = 0;
 	tmp = *stack_a;
 	while (tmp->next)

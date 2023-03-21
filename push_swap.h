@@ -6,14 +6,14 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 23:59:43 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/13 23:52:31 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:03:04 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./bonus/get_next_line/get_next_line.h"
+# include "./bonus/get_line/get_next_line.h"
 # include "libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>

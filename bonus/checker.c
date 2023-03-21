@@ -6,12 +6,12 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:03:18 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/03/13 02:16:35 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:56:06 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include "./get_next_line/get_next_line.h"
+#include "./get_line/get_next_line.h"
 
 void	ft_checking_2(t_stack **stack_a, t_stack **stack_b, char *str)
 {
@@ -83,22 +83,25 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 	int		len;
 
-	stack_a = copy_av(ac, av);
-	if (!stack_a)
+	if (ac >= 2)
 	{
-		del_stack(&stack_a);
-		write(1, "Error\n", 6);
-		return (1);
+		stack_a = copy_av(ac, av);
+		if (!stack_a)
+		{
+			del_stack(&stack_a);
+			write(1, "Error\n", 6);
+			return (1);
+		}
+		ft_max(stack_a);
+		len = s_len(stack_a);
+		stack_b = NULL;
+		if (!check_instr(&stack_a, &stack_b))
+		{
+			del_stack(&stack_a);
+			del_stack(&stack_b);
+			return (0);
+		}
+		checker_main_2(&stack_a, len);
 	}
-	ft_max(stack_a);
-	len = s_len(stack_a);
-	stack_b = NULL;
-	if (!check_instr(&stack_a, &stack_b))
-	{
-		del_stack(&stack_a);
-		del_stack(&stack_b);
-		return (0);
-	}
-	checker_main_2(&stack_a, len);
 	return (0);
 }
