@@ -42,7 +42,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 	int		len;
 
-	if (ac <= 2)
+	if (ac < 2)
 		return (0);
 	stack_a = copy_av(ac, av);
 	if (!stack_a)
