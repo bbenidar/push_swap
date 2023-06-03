@@ -15,7 +15,7 @@ The project is written in C and consists of two programs: push_swap and checker.
 ## Installation
 1. Clone the repository:
 
-git clone https://github.com/your-username/push_swap.git
+git clone https://github.com/bbenidar/push_swap.git
 
 2. Navigate to the project directory:
 
